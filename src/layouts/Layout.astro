@@ -1,0 +1,32 @@
+
+---
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="da-DK">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description ?? "Sinful ønsker at bringe mere leg, nærvær og intimitet ind i hverdagen ♥ Tag sexlegetøj med i soveværelset og få et mere legende sexliv - solo og som par"} />
+		<title>{title ?? "Sinful - Køb sexlegetøj til et legende sexliv #LetsTalkAboutSex"}</title>
+
+		<link rel="sitemap" href="/sitemap-index.xml" />
+	</head>
+	<body>
+		<SiteHeader />
+		<slot />
+		<SiteFooter />
+	</body>
+</html>
