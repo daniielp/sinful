@@ -4,9 +4,10 @@ interface Props {
   title: string;
   image: string;
   tidsdpunkt?: Date;
+  href?: string;
 }
 
-const { title, tidsdpunkt, image } = Astro.props;
+const { title, tidsdpunkt, image, href } = Astro.props;
 ---
 
 <article
@@ -34,7 +35,7 @@ const { title, tidsdpunkt, image } = Astro.props;
     }
   </div>
   <h3 class="mt-3 text-lg font-semibold leading-6 text-white">
-    <a href="#">
+    <a href={href ?? "/404"}>
       <span class="absolute inset-0"></span>
       {title}
     </a>

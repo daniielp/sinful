@@ -3,70 +3,83 @@ import BlogCard from "../components/BlogCard.astro";
 import Layout from "../layouts/Layout.astro";
 
 const condomContent = [
-    {
-        title: "Bland selv kondomer",
-        image: "/images/condoms.jpg"
-    },
-]
+  {
+    title: "Bland selv kondomer",
+    image: "/images/condoms.jpg",
+  },
+];
 const toyContent = [
-    {
-        title: "",
-        image: "/images/adv.jpg"
-    },
-]
+  {
+    title: "",
+    image: "/images/adv.jpg",
+  },
+];
 
 const knappper = [
-    {
-        title: "Kvinder",
-		title1: "Mænd",
-		title2: "Par",
-		title3: "18+",
-		href: "/kvinder"
-    },
-]
+  {
+    title: "Kvinder",
 
+    href: "/kvinder",
+  },
+  {
+    title: "Mænd",
+    href: "/maend",
+  },
+  {
+    title: "Par",
+    href: "/par",
+  },
+  {
+    title: "18+",
+    href: "/18",
+  },
+];
 ---
 
-<Layout title='Sinful'>
-	<main>
-		<section class="mx-auto mt-16 grid max-w-7xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20">
-            {condomContent.map((artikel) => <BlogCard title={artikel.title} image={artikel.image} />)}
-          </section>
-		  <div class="mx-auto max-w-7xl px-6 lg:px-8">
-			<div class="mx-auto text-center">
-			  <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Bliv bedre til sex</h2>
-			  <p class="mt-2 text-lg leading-8 text-gray-600">De bedste tips & tricks til bedre sexliv</p>
-			</div>
-			<section class="mx-auto text-center mt-16 grid max-w-5xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:grid-cols-2">
-			  {knappper.map((knap) => 
-			 <a href={knap.href} class="13.57
-
-			 rounded-md bg-sinful-light-red px-3.5 py-2.5 text-md font-semibold text-black shadow-sm hover:bg-sinful-red  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-			 {knap.title}
-			 </a> 
-			 <a href={knap.href} class="13.57
-
-			 rounded-md bg-sinful-light-red px-3.5 py-2.5 text-md font-semibold text-black shadow-sm hover:bg-sinful-red  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-			 {knap.title1}
-			 </a> 
-			 <a href={knap.href} class="13.57
-
-			 rounded-md bg-sinful-light-red px-3.5 py-2.5 text-md font-semibold text-black shadow-sm hover:bg-sinful-red  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-			 {knap.title2}
-			 </a> 
-			 <a href={knap.href} class="13.57
-
-			 rounded-md bg-sinful-light-red px-3.5 py-2.5 text-md font-semibold text-black shadow-sm hover:bg-sinful-red  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-			 {knap.title3}
-			 </a> 
-			 
-			  
-			  )}
-			  <!-- More posts... -->
-			</section>
-		  </div>
-		  <section class="mx-auto mt-16 grid max-w-7xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20">
-            {toyContent.map((artikel) => <BlogCard title={artikel.title} image={artikel.image} />)}
-          </section>
-	</main>
+<Layout title="Sinful">
+  <main>
+    <section
+      class="mx-auto mt-16 grid max-w-7xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20"
+    >
+      {
+        condomContent.map((artikel) => (
+          <BlogCard title={artikel.title} image={artikel.image} />
+        ))
+      }
+    </section>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto text-center mt-16 lg:mt-20">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          Velkommen til sinful
+        </h2>
+        <p class="mt-2 text-lg leading-8 text-gray-600">
+			Køb sexlegetøj til et legende sexliv #LetsTalkAboutSex
+        </p>
+      </div>
+      <section
+        class="mx-auto text-center mt-16 grid max-w-5xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:grid-cols-2"
+      >
+        {
+          knappper.map((knap) => (
+            <a
+              href={knap.href}
+              class="rounded-md bg-sinful-light-red px-3.5 py-2.5 text-md font-semibold text-black shadow-sm hover:bg-sinful-red  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              {knap.title}
+            </a>
+          ))
+        }
+        <!-- More posts... -->
+      </section>
+    </div>
+    <section
+      class="mx-auto mt-16 grid max-w-7xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20"
+    >
+      {
+        toyContent.map((artikel) => (
+          <BlogCard title={artikel.title} image={artikel.image} />
+        ))
+      }
+    </section>
+  </main>
 </Layout>
