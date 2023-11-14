@@ -6,7 +6,8 @@ const blogContent = [
     {
         title: "Skal vi have sex?",
         tidsdpunkt: new Date("2023-11-10"),
-        image: "/images/sex.jpg"
+        image: "/images/sex.jpg",
+        href: "/artikel"
     },
     {
         title: "Hvordan slapper jeg af under oral sex?",
@@ -45,7 +46,7 @@ const blogContent = [
             <p class="mt-2 text-lg leading-8 text-gray-600">De bedste tips & tricks til bedre sexliv</p>
           </div>
           <section class="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            {blogContent.map((artikel) => <BlogCard title={artikel.title} tidsdpunkt={artikel.tidsdpunkt} image={artikel.image} />)}
+            {blogContent.map((artikel) => <BlogCard title={artikel.title} tidsdpunkt={artikel.tidsdpunkt} image={artikel.image} href={artikel.href} />)}
             <!-- More posts... -->
           </section>
         </div>

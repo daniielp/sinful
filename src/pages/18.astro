@@ -1,8 +1,73 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import BlogCard from "../components/BlogCard.astro";
 
+const blogContent = [
+
+    {
+        title: "Kondom",
+        image: "/images/kondombillede.jpg"
+    },
+    {
+        title: "Lingerie",
+        image: "/images/lingerie.jpg"
+    },
+    {
+        title: "Butt plug",
+        image: "/images/butt plug.jpg"
+    },
+    {
+        title: "Pocket pussy",
+        image: "/images/Pocketpussy.jpg"
+    },
+    {
+        title: "Penis forstørre?",
+        image: "/images/Penispumpe.jpg"
+    },
+    {
+        title: "Dildo",
+        image: "/images/Dildo.jpg"
+    },
+]
+
+const knappper = [
+  {
+    title: "Tips & Tricks",
+
+    href: "/tips-and-tricks",
+  },
+  {
+    title: "Brevkasse",
+    href: "/artikel",
+  },
+];
 ---
 
 <Layout>
-    
+    <main>
+        <div class="bg-white py-24 sm:py-32">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+              <div class="mx-auto text-left"><h6> <br>Forside/18+</h6>
+                <section class="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+                    {
+                        knappper.map((knap) => (
+                          <a
+                            href={knap.href}
+                            class="rounded-md bg-sinful-light-red px-3.5 py-2.5 text-md font-semibold text-black shadow-sm hover:bg-sinful-red  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                          >
+                            {knap.title}
+                          </a>
+                        ))
+                      }
+                </section>
+                <h2 class="mt-16 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Bliv bedre til sex!</h2>
+                <section class="mx-auto mt-2 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-4 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                    {blogContent.map((artikel) => <BlogCard title={artikel.title}  image={artikel.image} />)}
+                </section>
+                
+              </div>
+              
+            </div>
+          </div>
+    </main>
 </Layout>
