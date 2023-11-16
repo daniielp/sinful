@@ -3,6 +3,7 @@
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import SiteBanner from '../components/SiteBanner.astro';
+import '@fontsource/inter';
 
 interface Props {
 	title?: string;
@@ -13,7 +14,7 @@ const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="da-DK">
+<html lang="da-DK" class="font-['Inter']">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
